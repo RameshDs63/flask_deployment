@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regex Tester Results</title>
+    <style>
+        .highlight {
+            background-color: #ffff00; /* Yellow background */
+            font-weight: bold;
+        }
+        .test-string {
+            white-space: nowrap; /* Prevent line breaks */
+        }
+    </style>
+</head>
+<body>
+    <h1>Regex Tester Results</h1>
+    <p><strong>Test String:</strong> {{ test_string }}</p>
+    <p><strong>Regex Pattern:</strong> {{ regex_pattern }}</p>
+    <p><strong>Matches count:</strong> {{ matches|length }}</p>
+    <h2>Matches:</h2>
+    <ul>
+        {% for match in matches %}
+        <li>{{ match }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Highlighted:</h2>
+    <p class="test-string">
+        {% for char in test_string %}
+            {% if char in matches %}
+                <span class="highlight">{{ char }}</span>
+            {% else %}
+                {{ char }}
+            {% endif %}
+        {% endfor %}
+    </p>
+    <a href="/">Back to Home</a>
+</body>
+</html>
