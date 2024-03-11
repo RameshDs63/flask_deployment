@@ -3,6 +3,28 @@
 <head>
     <title>Regex Tester</title>
     <style>
+        body {
+            background-color: parrotblue;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 20px;
+        }
+        .form {
+            width: 45%;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .title {
+            text-align: center;
+            margin-top: 20px; 
+        }
         .submit-button {
             background-color: blue;
             color: white;
@@ -13,20 +35,26 @@
     </style>
 </head>
 <body>
-    <h1>Regex Tester</h1>
-    <form action="/results" method="post">
-        <label for="test_string">Test String:</label><br>
-        <textarea id="test_string" name="test_string" rows="4" cols="50"></textarea><br>
-        <label for="regex_pattern">Regex Pattern:</label><br>
-        <input type="text" id="regex_pattern" name="regex_pattern"><br>
-        <input type="submit" value="Submit" class="submit-button">
-    </form>
-    <br>
-    <h1>check valid email</h1>
-    <form action="/validate_email" method="post">
-        <label for="email">Email:</label><br>
-        <input type="text" id="email" name="email"><br>
-        <input type="submit" value="submit" class="submit-button">
-    </form>
+    <h1 class="title">RegEx Engine and Email Validator</h1>
+    <div class="container">
+        <div class="form">
+            <h2>Regex Tester</h2>
+            <form action="/results" method="post">
+                <label for="test_string">Test String:</label><br>
+                <textarea id="test_string" name="test_string" rows="4" cols="50"></textarea><br>
+                <label for="regex_pattern">Regex Pattern:</label><br>
+                <input type="text" id="regex_pattern" name="regex_pattern"><br>
+                <input type="submit" value="Submit" class="submit-button">
+            </form>
+        </div>
+        <div class="form">
+            <h2>Email Test</h2>
+            <form action="/validate_email" method="post">
+                <label for="email">Email:</label><br>
+                <input type="text" id="email" name="email"><br>
+                <input type="submit" value="Validate Email" class="submit-button">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
