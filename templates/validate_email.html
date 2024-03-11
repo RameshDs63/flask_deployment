@@ -5,8 +5,8 @@
 </head>
 <body>
     <h1>Email Validation</h1>
-    <p><strong>Email:</strong> {{ email }}</p>
-    <p><strong>Validation Result:</strong> {% if is_valid %}Valid{% else %}Invalid{% endif %}</p>
+    <p><strong>Email:</strong> <span style="color: blue;">{{ email }}</span></p>
+    <p><strong>Validation Result:</strong> <span style="color: {% if is_valid %}darkgreen{% else %}red{% endif %};">{% if is_valid %}Valid{% else %}Invalid{% endif %}</span></p>
     <a href="/">Back to Home</a>
 </body>
 </html>
