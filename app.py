@@ -17,7 +17,7 @@ def results():
 @app.route('/validate_email', methods=['POST'])
 def validate_email():
     email = request.form['email']
-    is_valid = re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', email) is not None
+    is_valid = re.match(r'^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$', email) is not None
     return render_template('validate_email.html', email=email, is_valid=is_valid)
 
 if __name__ == '__main__':
